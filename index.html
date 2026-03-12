@@ -22,6 +22,7 @@
       --coral: #E8613A;
       --light: #f7f8fc;
       --white: #ffffff;
+      --cream: #FDF8F3;
       --text: #2d2d2d;
       --border: #e2e6ef;
       --teal-light: #f0fdfb;
@@ -32,7 +33,7 @@
     body {
       font-family: 'Montserrat', sans-serif;
       color: var(--text);
-      background: var(--white);
+      background: var(--cream);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -125,7 +126,7 @@
     .label-tag--coral { color: var(--coral); }
 
     /* ─── HERO ─── */
-    #hero { background: var(--white); }
+    #hero { background: var(--cream); }
     #hero .inner { padding-top: 56px; padding-bottom: 56px; }
 
     .hero-grid {
@@ -233,7 +234,7 @@
     }
 
     /* ─── QUIZ ─── */
-    #kviz { background: var(--white); }
+    #kviz { background: var(--cream); }
     #kviz .inner--quiz { text-align: center; }
 
     .quiz-h2 {
@@ -513,7 +514,7 @@
     #prijava { background: var(--light); scroll-margin-top: 80px; }
 
     /* ─── PROGRAM ─── */
-    #program { background: var(--white); }
+    #program { background: var(--cream); }
     #program .inner { padding-bottom: 0; }
 
     .program-header {
@@ -534,7 +535,7 @@
     }
 
     /* ─── PROGRAM CTA (between cards and about) ─── */
-    #program-cta { background: var(--white); }
+    #program-cta { background: var(--cream); }
     #program-cta .inner {
       text-align: center;
       padding-top: 80px;
@@ -691,7 +692,27 @@
       .program-header { grid-template-columns: 1fr; gap: 20px; }
       .program-h2   { font-size: 26px; margin-bottom: 20px; }
       .program-header-right .btn { width: 100%; text-align: center; display: block; }
-      .cards-grid   { grid-template-columns: 1fr; }
+      .cards-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        padding-bottom: 16px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .cards-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .day-card {
+        flex: 0 0 80vw;
+        min-width: 80vw;
+        scroll-snap-align: start;
+      }
 
       /* About */
       .about-grid {
@@ -710,6 +731,21 @@
       .pain-list li { font-size: 15px; }
       .for-you-cta  { font-size: 16px; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
+    @media (max-width: 768px) {
+      .quiz-card {
+        padding-bottom: 24px;
+      }
+
+      #for-you .inner {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+
+      .for-you-heading {
+        margin-bottom: 24px;
+      }
     }
 
     @media (max-width: 480px) {
