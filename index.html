@@ -667,15 +667,28 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       /* Hero */
+      #hero {
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+      }
+      #hero .inner {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-preview-card { display: none; }
       .hero-left { text-align: center; }
-      .hero-h1  { font-size: 30px; }
-      .hero-sub { font-size: 16px; margin: 0 auto 28px; }
-      .btn-lg   { padding: 16px 28px; font-size: 15px; }
+      .hero-h1  { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
+      .hero-sub { font-size: 18px; line-height: 1.5; margin: 0 auto 28px; }
+      #hero .btn-lg { font-size: 18px; padding: 18px 24px; width: 100%; margin-bottom: 12px; }
 
       /* For you */
-      .for-you-grid { grid-template-columns: 1fr; }
+      .for-you-grid { grid-template-columns: 1fr; gap: 16px; }
       .for-you-heading { font-size: 32px; }
 
       /* Quiz */
@@ -736,10 +749,7 @@
     @media (max-width: 768px) {
       .quiz-card {
         padding-bottom: 24px;
-      }
-
-      #hero .inner {
-        padding-bottom: 40px;
+        margin-bottom: 0;
       }
 
       #for-you .inner {
@@ -748,12 +758,20 @@
       }
 
       .for-you-heading {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
+      }
+
+      #prijava .inner--narrow {
+        padding-top: 32px;
       }
 
       #program-cta .inner {
         padding-top: 32px;
         padding-bottom: 32px;
+      }
+
+      .cards-grid {
+        margin-bottom: 24px;
       }
     }
 
@@ -964,7 +982,7 @@
 <!-- ─── PROGRAM ─── -->
 <section id="program">
   <div class="inner">
-    <span class="label-tag">Program</span>
+    <span class="label-tag">5 MAILOVA</span>
     <h2 class="program-h2">Pet dana. Pet stvari koje<br>ćeš početi raditi drugačije.</h2>
     <div class="cards-grid">
 
