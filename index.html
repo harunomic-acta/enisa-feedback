@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback kurs - Enisa Selmanović-Salkić | Consultor</title>
+  <meta name="description" content="5 dana. 5 kratkih lekcija. Jedna konkretna akcija dnevno. Besplatni email kurs o feedbacku - direktno u tvoj inbox." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #0f1b35;
+      --teal: #0D9488;
+      --coral: #E8613A;
+      --light: #f7f8fc;
+      --white: #ffffff;
+      --text: #2d2d2d;
+      --border: #e2e6ef;
+      --teal-light: #f0fdfb;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      transition: box-shadow 0.25s ease;
+    }
+    #site-header.scrolled {
+      box-shadow: 0 2px 16px rgba(15, 27, 53, 0.09);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-teal { background: var(--teal); color: var(--white); }
+    .btn-teal:hover {
+      background: #0b857a;
+      box-shadow: 0 4px 16px rgba(13, 148, 136, 0.3);
+    }
+    .btn-sm  { padding: 10px 20px; font-size: 13px; }
+    .btn-md  { padding: 13px 24px; font-size: 14px; }
+    .btn-lg  { padding: 18px 36px; font-size: 17px; border-radius: 10px; }
+    .btn-full {
+      width: 100%;
+      text-align: center;
+      padding: 18px 24px;
+      font-size: 16px;
+      display: block;
+    }
+
+    /* ─── LAYOUT HELPERS ─── */
+    section { width: 100%; }
+
+    .inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .inner--narrow {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .inner--quiz {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .label-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .label-tag--coral { color: var(--coral); }
+
+    /* ─── HERO ─── */
+    #hero { background: var(--white); }
+    #hero .inner { padding-top: 56px; padding-bottom: 56px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-left { text-align: left; }
+
+    .hero-h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.12;
+      margin-bottom: 15px;
+    }
+    .hero-sub {
+      color: #666;
+      font-size: 16px;
+      margin: 0 0 28px;
+      line-height: 1.7;
+    }
+    .hero-micro {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #999;
+      font-style: italic;
+    }
+
+    /* Hero preview card */
+    .hero-preview-card {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .hero-preview-list {
+      list-style: none;
+      margin: 16px 0 20px;
+    }
+    .hero-preview-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--white);
+    }
+    .hero-preview-list li:last-child { border-bottom: none; }
+    .hero-preview-num {
+      color: var(--coral);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .hero-preview-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      margin: 4px 0 12px;
+    }
+    .hero-preview-bonus {
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ─── FOR YOU ─── */
+    #for-you { background: var(--light); }
+
+    .for-you-grid {
+      display: grid;
+      grid-template-columns: 40fr 60fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .pain-list {
+      list-style: none;
+      margin: 20px 0 24px;
+    }
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .pain-list li:last-child { border-bottom: none; }
+    .pain-arrow {
+      color: var(--coral);
+      font-weight: 800;
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .pain-text { color: var(--navy); font-weight: 600; }
+    .for-you-heading {
+      font-size: 48px;
+      font-weight: 700;
+      color: #0f1b35;
+      line-height: 1.2;
+    }
+
+    /* ─── QUIZ ─── */
+    #kviz { background: var(--white); }
+    #kviz .inner--quiz { text-align: center; }
+
+    .quiz-h2 {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 9px;
+    }
+    .quiz-sub {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    /* Progress */
+    .quiz-progress-wrap { margin-bottom: 24px; }
+    .progress-track {
+      position: relative;
+      height: 6px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: visible;
+      margin-bottom: 10px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--teal);
+      border-radius: 99px;
+      transition: width 0.4s ease;
+    }
+    .progress-dot {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      background: var(--coral);
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--coral);
+      transition: left 0.4s ease;
+    }
+    .progress-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      letter-spacing: 1px;
+    }
+
+    /* Quiz card */
+    .quiz-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 22px;
+      text-align: left;
+      box-shadow: 0 4px 24px rgba(15, 27, 53, 0.06);
+    }
+
+    .question-wrap {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .question-wrap.active  { display: block; }
+    .question-wrap.visible { opacity: 1; transform: translateY(0); }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .options-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .option-item {
+      padding: 16px 20px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      text-align: left;
+      width: 100%;
+      line-height: 1.5;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+    .option-item:hover {
+      border-color: var(--teal);
+      background: rgba(13, 148, 136, 0.04);
+    }
+    .option-item.selected {
+      border: 2px solid var(--teal);
+      background: var(--teal-light);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .quiz-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-back {
+      background: none;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      color: #999;
+      cursor: pointer;
+      padding: 8px 0;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+    .btn-back:hover { color: var(--text); }
+
+    .btn-next {
+      margin-left: auto;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 13px 28px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+    .btn-next.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .btn-next:hover {
+      background: #0b857a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+    }
+
+    /* Results */
+    .quiz-results {
+      display: none;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .quiz-results.visible { opacity: 1; }
+
+    .result-score-wrap {
+      margin-bottom: 16px;
+    }
+    .result-score-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .result-score-number {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .result-score-denom {
+      font-size: 28px;
+      font-weight: 600;
+      color: #bbb;
+    }
+    .result-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .result-message {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 480px;
+      margin: 0 auto 0;
+    }
+    .result-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+    .quiz-result-cta-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    /* ─── FORM CARD ─── */
+    .form-card {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 32px 28px;
+      max-width: 480px;
+      margin: 0 auto;
+      box-shadow: 0 4px 32px rgba(15, 27, 53, 0.07);
+      text-align: center;
+    }
+    .form-h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+    .form-field {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--white);
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-field:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+    }
+    .form-field::placeholder { color: #bbb; }
+    .form-micro {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #aaa;
+      font-style: italic;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 8px 0;
+    }
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(13, 148, 136, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 26px;
+      color: var(--teal);
+      font-weight: 800;
+    }
+    .success-main {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .success-sub { font-size: 14px; color: #999; }
+
+    /* ─── STANDALONE FORM SECTION ─── */
+    #prijava { background: var(--light); scroll-margin-top: 80px; }
+
+    /* ─── PROGRAM ─── */
+    #program { background: var(--white); }
+    #program .inner { padding-bottom: 0; }
+
+    .program-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 32px;
+    }
+    .program-header-left { text-align: left; }
+
+    .program-h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 32px;
+    }
+
+    /* ─── PROGRAM CTA (between cards and about) ─── */
+    #program-cta { background: var(--white); }
+    #program-cta .inner {
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    .program-cta-text {
+      color: #777;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      text-align: left;
+    }
+    .day-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .day-card:hover {
+      box-shadow: 0 8px 32px rgba(15, 27, 53, 0.1);
+      transform: translateY(-3px);
+    }
+    .day-card--bonus { border: 2px dashed var(--coral); }
+    .day-number {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--coral);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .day-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .day-desc { font-size: 14px; color: #777; line-height: 1.6; }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--navy); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .about-image {
+      width: 200px;
+      height: 200px;
+      border: 2px solid var(--teal);
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      flex-shrink: 0;
+    }
+    .about-name {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .about-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--coral);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+    .about-bio {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .about-bio p + p { margin-top: 12px; }
+    .about-stats { display: flex; gap: 28px; }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--coral);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ─── FOOTER ─── */
+    #footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--coral); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      /* Hero */
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-preview-card { display: none; }
+      .hero-left { text-align: center; }
+      .hero-h1  { font-size: 30px; }
+      .hero-sub { font-size: 16px; margin: 0 auto 28px; }
+      .btn-lg   { padding: 16px 28px; font-size: 15px; }
+
+      /* For you */
+      .for-you-grid { grid-template-columns: 1fr; }
+      .for-you-heading { font-size: 32px; }
+
+      /* Quiz */
+      .quiz-h2      { font-size: 28px; }
+      .quiz-card    { padding: 24px 16px; }
+      .question-text { font-size: 16px; }
+      .option-item  { font-size: 14px; padding: 13px 16px; }
+
+      .result-score-number { font-size: 52px; }
+      .result-title { font-size: 20px; }
+      .form-card    { padding: 28px 20px; }
+
+      /* Program */
+      .program-header { grid-template-columns: 1fr; gap: 20px; }
+      .program-h2   { font-size: 26px; margin-bottom: 20px; }
+      .program-header-right .btn { width: 100%; text-align: center; display: block; }
+      .cards-grid   { grid-template-columns: 1fr; }
+
+      /* About */
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+      .about-image  { margin: 0 auto; }
+      .about-stats  { justify-content: center; }
+      .about-name   { font-size: 26px; }
+
+      .inner,
+      .inner--narrow,
+      .inner--quiz  { padding-top: 40px; padding-bottom: 40px; }
+
+      .pain-list li { font-size: 15px; }
+      .for-you-cta  { font-size: 16px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .header-inner { padding: 0 16px; }
+      .logo { font-size: 15px; letter-spacing: 2px; }
+      .about-stats  { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── STICKY HEADER ─── -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo">Consultor</a>
+    <a href="#prijava" class="btn btn-teal btn-sm">Prijavi se besplatno</a>
+  </div>
+</header>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="inner">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="label-tag">Besplatni email mikro kurs</span>
+        <h1 class="hero-h1">Feedback daješ.<br>Efekta &mdash; nema.</h1>
+        <p class="hero-sub">5 dana. 5 stvari koje možeš primijeniti još iste sedmice. Besplatno - direktno u tvoj inbox.</p>
+        <a href="#kviz" class="btn btn-teal btn-lg">Otkrij kako daješ feedback &rarr;</a>
+        <p class="hero-micro">Treba ti 2 minute. Bez kreditne kartice. Bez spama.</p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-preview-card">
+          <span class="label-tag label-tag--coral">Šta te čeka</span>
+          <ul class="hero-preview-list">
+            <li><span class="hero-preview-num">01</span><span>Zašto feedback ne radi</span></li>
+            <li><span class="hero-preview-num">02</span><span>Kako reći da neko zaista čuje</span></li>
+            <li><span class="hero-preview-num">03</span><span>Kako primiti feedback bez odbrane</span></li>
+            <li><span class="hero-preview-num">04</span><span>Zašto feedback kultura ne postoji</span></li>
+            <li><span class="hero-preview-num">05</span><span>Jedan razgovor ove sedmice</span></li>
+          </ul>
+          <div class="hero-preview-divider"></div>
+          <p class="hero-preview-bonus">🎁 + Bonus lekcija</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── JE LI OVO ZA TEBE ─── -->
+<section id="for-you">
+  <div class="inner">
+    <div class="for-you-grid">
+      <div class="for-you-left">
+        <p class="for-you-heading">Ovo je za tebe ako...</p>
+      </div>
+      <div class="for-you-right">
+        <ul class="pain-list">
+          <li>
+            <span class="pain-arrow">&rarr;</span>
+            <span class="pain-text">Kaže da razumije. Kimne. Sljedeći put &mdash; isto.</span>
+          </li>
+          <li>
+            <span class="pain-arrow">&rarr;</span>
+            <span class="pain-text">Imaš šta reći. Ali ne kažeš. Jer ko zna kako će proći.</span>
+          </li>
+          <li>
+            <span class="pain-arrow">&rarr;</span>
+            <span class="pain-text">Neko ti da feedback i prva misao ti je: &ldquo;Pa nije baš tako.&rdquo;</span>
+          </li>
+          <li>
+            <span class="pain-arrow">&rarr;</span>
+            <span class="pain-text">Pitaš tim šta misle. Kažu: &ldquo;Sve je ok.&rdquo; Znaš da nije.</span>
+          </li>
+          <li>
+            <span class="pain-arrow">&rarr;</span>
+            <span class="pain-text">Razgovor bi trebao biti. Al' uvijek nešto drugo stigne prvo.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KVIZ ─── -->
+<section id="kviz">
+  <div class="inner--quiz">
+    <span class="label-tag">Kratki kviz</span>
+    <h2 class="quiz-h2">Kako zapravo daješ feedback?</h2>
+    <p class="quiz-sub">4 pitanja. 2 minute. Vidjet ćeš odmah gdje si.</p>
+
+    <div id="quiz-container">
+
+      <!-- Progress Bar -->
+      <div class="quiz-progress-wrap" id="progress-wrap">
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill" style="width:25%;"></div>
+          <div class="progress-dot"  id="progress-dot"  style="left:calc(25% - 7px);"></div>
+        </div>
+        <p class="progress-label" id="progress-label">Pitanje 1 od 4</p>
+      </div>
+
+      <div class="quiz-card">
+
+        <!-- Q1 -->
+        <div class="question-wrap" id="q1">
+          <p class="question-text">Kad trebaš dati feedback nekome u timu - šta se zapravo desi?</p>
+          <ul class="options-list">
+            <li><button class="option-item" data-value="2">A) Kažem odmah, direktno - nekad i previše direktno</button></li>
+            <li><button class="option-item" data-value="4">B) Razmislim dobro, odaberem trenutak i kažem jasno</button></li>
+            <li><button class="option-item" data-value="1">C) Čekam pravi trenutak - koji često ne dođe</button></li>
+            <li><button class="option-item" data-value="1">D) Zamotam u kompliment da ne bude neugodno</button></li>
+          </ul>
+          <div class="quiz-nav">
+            <span></span>
+            <button class="btn-next" id="next-1">Sljedeće &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-wrap" id="q2">
+          <p class="question-text">Zadnji put kad si dobio/la feedback - koja ti je bila prva reakcija?</p>
+          <ul class="options-list">
+            <li><button class="option-item" data-value="1">A) Odmah sam počeo/la objašnjavati zašto sam tako uradio/la</button></li>
+            <li><button class="option-item" data-value="4">B) Slušao/la sam, zahvalio/la se, razmislio/la poslije</button></li>
+            <li><button class="option-item" data-value="1">C) Pravio/la sam se da me nije dirnulo - a jeste</button></li>
+            <li><button class="option-item" data-value="2">D) Zavisilo je od toga ko mi je dao i kako</button></li>
+          </ul>
+          <div class="quiz-nav">
+            <button class="btn-back" id="back-2">&#8592; Nazad</button>
+            <button class="btn-next" id="next-2">Sljedeće &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-wrap" id="q3">
+          <p class="question-text">Kad trebaš reći nekome da nešto nije dobro - kako to zvuči?</p>
+          <ul class="options-list">
+            <li><button class="option-item" data-value="2">A) Ovo nije dobro, treba popraviti. Jasno i kratko.</button></li>
+            <li><button class="option-item" data-value="4">B) Primijetio/la sam da... i efekat je bio... Trebaš... Konkretno.</button></li>
+            <li><button class="option-item" data-value="1">C) Znaš, generalno je okej, ali možda bi moglo... Nejasno.</button></li>
+            <li><button class="option-item" data-value="1">D) Ne kažem ništa - promijenim nešto sam/a ili se nadam da će proći.</button></li>
+          </ul>
+          <div class="quiz-nav">
+            <button class="btn-back" id="back-3">&#8592; Nazad</button>
+            <button class="btn-next" id="next-3">Sljedeće &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-wrap" id="q4">
+          <p class="question-text">Koliko često tvoj tim tebi daje feedback?</p>
+          <ul class="options-list">
+            <li><button class="option-item" data-value="4">A) Redovno - pitam ih i dobijam iskrene odgovore</button></li>
+            <li><button class="option-item" data-value="2">B) Ponekad - kad ih direktno pitam</button></li>
+            <li><button class="option-item" data-value="1">C) Rijetko - uglavnom šute</button></li>
+            <li><button class="option-item" data-value="1">D) Nikad - mislim da se ne usuđuju</button></li>
+          </ul>
+          <div class="quiz-nav">
+            <button class="btn-back" id="back-4">&#8592; Nazad</button>
+            <button class="btn-next" id="next-4">Vidi rezultat &rarr;</button>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="quiz-results" id="quiz-results">
+          <div class="result-score-wrap">
+            <span class="result-score-label">Tvoj rezultat</span>
+            <div>
+              <span class="result-score-number" id="result-score-number"></span><span class="result-score-denom">/16</span>
+            </div>
+          </div>
+          <p class="result-title"   id="result-title"></p>
+          <p class="result-message" id="result-message"></p>
+          <hr class="result-divider" />
+
+          <!-- Post-result CTA -->
+          <p class="quiz-result-cta-label">Spreman/na početi?</p>
+          <button class="btn btn-teal btn-lg" onclick="document.getElementById('prijava').scrollIntoView({behavior:'smooth'})">Prijavi se ispod &rarr;</button>
+        </div>
+
+      </div><!-- /.quiz-card -->
+    </div><!-- /#quiz-container -->
+  </div>
+</section>
+
+<!-- ─── STANDALONE FORM (header CTA target) ─── -->
+<section id="prijava">
+  <div class="inner--narrow">
+    <div class="form-card">
+      <span class="label-tag" style="display:block; text-align:center; margin-bottom:10px;">Prijavi se besplatno</span>
+      <h3 class="form-h3">Počni. Besplatno. Inbox ti je ionako već pun gorih stvari.</h3>
+      <form action="https://app.kit.com/forms/9198480/subscriptions" method="POST" id="kit-form-standalone">
+        <input type="text"  name="first_name"    class="form-field" placeholder="Tvoje ime"       required autocomplete="given-name" />
+        <input type="email" name="email_address" class="form-field" placeholder="tvoj@email.com"  required autocomplete="email" />
+        <button type="submit" class="btn btn-teal btn-full" style="margin-top:4px;">Pošalji mi prvu lekciju &rarr;</button>
+        <p class="form-micro">Pet emailova. Ništa više. Odjaviš se kad hoćeš &mdash; bez drame.</p>
+      </form>
+      <div class="form-success" id="form-success-standalone">
+        <div class="success-icon">&#10003;</div>
+        <p class="success-main">Odlično. Provjeri inbox - prva lekcija stiže sutra ujutro.</p>
+        <p class="success-sub">A dok čekaš - pogledaj šta te čeka ispod.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAM ─── -->
+<section id="program">
+  <div class="inner">
+    <span class="label-tag">Program</span>
+    <h2 class="program-h2">Pet dana. Pet stvari koje<br>ćeš početi raditi drugačije.</h2>
+    <div class="cards-grid">
+
+      <div class="day-card">
+        <div class="day-number">1</div>
+        <div class="day-title">Zašto feedback ne radi</div>
+        <div class="day-desc">Mislio/la si da daješ feedback. Vjerovatno nisi. Dan 1 to popravi.</div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-number">2</div>
+        <div class="day-title">Kako reći da neko zaista čuje</div>
+        <div class="day-desc">Sandwich metoda? Svako je čuo za nju. Skoro niko ne zna zašto ne radi.</div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-number">3</div>
+        <div class="day-title">Kako primiti feedback bez odbrane</div>
+        <div class="day-desc">Kad ti neko da feedback &mdash; prva reakcija te otkrije više nego što misliš.</div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-number">4</div>
+        <div class="day-title">Zašto feedback kultura ne postoji u tvom timu</div>
+        <div class="day-desc">Kažeš: vrata su mi uvijek otvorena. Tim to čuje kao: ne dolazi.</div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-number">5</div>
+        <div class="day-title">Jedan razgovor ove sedmice</div>
+        <div class="day-desc">Jedan razgovor. Dvadeset minuta. Možda najkorisniji ovog mjeseca.</div>
+      </div>
+
+      <div class="day-card day-card--bonus">
+        <div class="day-number">🎁</div>
+        <div class="day-title">Bonus: Ako hoćeš ići dalje</div>
+        <div class="day-desc">Za one koji žele sistematski razvoj - šta je sljedeći korak.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAM CTA ─── -->
+<section id="program-cta">
+  <div class="inner">
+    <p class="program-cta-text">Svaki email je kratki. Čita se za 3 minute. Na kraju - jedna stvar koju možeš uraditi odmah.</p>
+    <a href="#prijava" class="btn btn-teal btn-md">Prijavi se besplatno &rarr;</a>
+  </div>
+</section>
+
+<!-- ─── O ENISI ─── -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div>
+        <img src="enisa.jpg" alt="Enisa Selmanović-Salkić" class="about-image" />
+      </div>
+      <div>
+        <span class="label-tag label-tag--coral">Vodič kroz kurs</span>
+        <h2 class="about-name">Enisa Selmanović-Salkić</h2>
+        <p class="about-title">Executive Coach | Osnivačica Consultora | Autorica</p>
+        <div class="about-bio">
+          <p>Dvadeset godina. Stotine menadžera. I još uvijek je iznenađena koliko je feedback teška stvar za ljude koji inače znaju šta rade. Nije fan teorije radi teorije. Ako ne možeš primijeniti u ponedjeljak &mdash; čemu služi?</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">godina u ovome</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">menadžera prošlo kroz trening</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">knjiga. Za sad.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer id="footer">
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Consultor</span>
+    <nav class="footer-links">
+      <a href="https://consultor.ba/akademija-za-lidere/" target="_blank" rel="noopener">Akademija za lidere</a>
+      <a href="https://consultor.ba" target="_blank" rel="noopener">Consultor</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // ─── STICKY HEADER ───
+  var siteHeader = document.getElementById('site-header');
+  window.addEventListener('scroll', function () {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // ─── QUIZ ───
+  (function () {
+    var TOTAL = 4;
+    var answers = [null, null, null, null];
+
+    var qEls = [
+      document.getElementById('q1'),
+      document.getElementById('q2'),
+      document.getElementById('q3'),
+      document.getElementById('q4')
+    ];
+    var nextBtns = [
+      document.getElementById('next-1'),
+      document.getElementById('next-2'),
+      document.getElementById('next-3'),
+      document.getElementById('next-4')
+    ];
+    var backBtns = [
+      null,
+      document.getElementById('back-2'),
+      document.getElementById('back-3'),
+      document.getElementById('back-4')
+    ];
+    var progressFill  = document.getElementById('progress-fill');
+    var progressDot   = document.getElementById('progress-dot');
+    var progressLabel = document.getElementById('progress-label');
+    var progressWrap  = document.getElementById('progress-wrap');
+    var resultsPanel  = document.getElementById('quiz-results');
+
+    function showQuestion(idx) {
+      qEls.forEach(function (q) { q.classList.remove('active', 'visible'); });
+
+      var el = qEls[idx];
+      el.classList.add('active');
+      void el.offsetWidth; // reflow
+      el.classList.add('visible');
+
+      var pct = ((idx + 1) / TOTAL) * 100;
+      progressFill.style.width = pct + '%';
+      progressDot.style.left   = 'calc(' + pct + '% - 7px)';
+      progressLabel.textContent = 'Pitanje ' + (idx + 1) + ' od ' + TOTAL;
+
+      // restore selection
+      el.querySelectorAll('.option-item').forEach(function (opt) {
+        var match = parseInt(opt.dataset.value) === answers[idx];
+        opt.classList.toggle('selected', match);
+      });
+
+      nextBtns[idx].classList.toggle('visible', answers[idx] !== null);
+    }
+
+    function showResults() {
+      qEls.forEach(function (q) { q.classList.remove('active', 'visible'); });
+      progressWrap.style.display = 'none';
+
+      var total = answers.reduce(function (s, v) { return s + (v || 0); }, 0);
+
+      var scoreEl   = document.getElementById('result-score-number');
+      var titleEl   = document.getElementById('result-title');
+      var messageEl = document.getElementById('result-message');
+
+      var color, title, message;
+
+      if (total <= 7) {
+        color   = 'var(--coral)';
+        title   = 'Feedback ti je slijepa mrlja.';
+        message = 'Nije to stvar dobre volje - nego alata koje niko nije pokazao. Za to smo tu. Kurs počinje sutra u tvom inboxu.';
+      } else if (total <= 12) {
+        color   = 'var(--teal)';
+        title   = 'Na pravom si putu. Ali ima prostora.';
+        message = 'Osjećaš instinktivno šta treba, ali još nema sistema iza toga. Pet dana, pet alata - i to se mijenja.';
+      } else {
+        color   = 'var(--navy)';
+        title   = 'Znaš šta radiš. Idi dublje.';
+        message = 'Solidna osnova. Ali feedback kultura u timu - to je sljedeći nivo. Kurs ti daje upravo to.';
+      }
+
+      scoreEl.textContent  = total;
+      scoreEl.style.color  = color;
+      titleEl.textContent  = title;
+      messageEl.textContent = message;
+
+      resultsPanel.style.display = 'block';
+      void resultsPanel.offsetWidth;
+      resultsPanel.classList.add('visible');
+    }
+
+    // Option click handlers
+    qEls.forEach(function (qEl, qi) {
+      qEl.querySelectorAll('.option-item').forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          qEl.querySelectorAll('.option-item').forEach(function (o) { o.classList.remove('selected'); });
+          opt.classList.add('selected');
+          answers[qi] = parseInt(opt.dataset.value);
+          nextBtns[qi].classList.add('visible');
+        });
+      });
+    });
+
+    // Next
+    nextBtns.forEach(function (btn, qi) {
+      btn.addEventListener('click', function () {
+        if (qi < TOTAL - 1) showQuestion(qi + 1);
+        else showResults();
+      });
+    });
+
+    // Back
+    backBtns.forEach(function (btn, qi) {
+      if (!btn) return;
+      btn.addEventListener('click', function () { showQuestion(qi - 1); });
+    });
+
+    showQuestion(0);
+  })();
+
+  // ─── FORM SUBMIT HELPER ───
+  function setupForm(formId, successId) {
+    var form    = document.getElementById(formId);
+    var success = document.getElementById(successId);
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function () {
+        form.style.display    = 'none';
+        success.style.display = 'block';
+      }).catch(function () {
+        form.style.display    = 'none';
+        success.style.display = 'block';
+      });
+    });
+  }
+
+  setupForm('kit-form-standalone', 'form-success-standalone');
+</script>
+</body>
+</html>
