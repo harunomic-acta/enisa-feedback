@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Potvrđeno - Consultor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #0f1b35;
+      --teal: #0D9488;
+      --coral: #E8613A;
+      --light: #f7f8fc;
+      --white: #ffffff;
+      --text: #2d2d2d;
+      --border: #e2e6ef;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      box-shadow: 0 2px 16px rgba(15, 27, 53, 0.09);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .header-nav a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .header-nav a:hover {
+      color: var(--teal);
+    }
+
+    /* ─── MAIN ─── */
+    .page-wrap {
+      min-height: calc(100vh - 64px - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      background: var(--white);
+    }
+
+    .content {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .label-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .subhead {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    .steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: var(--navy);
+      line-height: 1.55;
+    }
+
+    .step-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--coral);
+      flex-shrink: 0;
+      line-height: 1.4;
+      min-width: 18px;
+    }
+
+    /* ─── CTA BLOCK ─── */
+    .cta-block {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .cta-pre {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .cta-block h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .cta-block p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-navy {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      letter-spacing: 0.3px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-navy:hover {
+      background: #1a2d52;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      padding: 0 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .page-wrap {
+        padding: 40px 20px;
+        align-items: flex-start;
+        padding-top: 48px;
+      }
+
+      .cta-block {
+        padding: 24px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="consultor-logo.png" alt="Consultor" height="36"></a>
+      <nav class="header-nav">
+        <a href="https://consultor.ba/akademija-za-lidere/">Akademija za lidere</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-wrap">
+    <div class="content">
+
+      <span class="label-tag">POTVRĐENO.</span>
+
+      <h1>Potvrđeno. Krećemo.</h1>
+
+      <p class="subhead">
+        Sutra ujutro — prva lekcija. Provjeri inbox i označi email kao važan da ne završi u Promotions.
+      </p>
+
+      <hr class="divider" />
+
+      <span class="section-label">Šta slijedi</span>
+
+      <ul class="steps">
+        <li>
+          <span class="step-num">1.</span>
+          <span>Sutra — zašto tvoj feedback ne radi.</span>
+        </li>
+        <li>
+          <span class="step-num">2.</span>
+          <span>Pet dana. Kratko. Konkretno. Bez teorije.</span>
+        </li>
+      </ul>
+
+      <hr class="divider" />
+
+      <div class="cta-block">
+        <p class="cta-pre">Ako ti pet dana ne bude dovoljno:</p>
+        <h3>Postoji Akademija.</h3>
+        <p>
+          Ali to poslije. Sad samo čekaj sutrašnji email.
+        </p>
+        <a href="https://consultor.ba/akademija-za-lidere/" class="btn-navy">Pogledaj Akademiju za lidere →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Consultor</span>
+      <div class="footer-links">
+        <a href="https://consultor.ba/akademija-za-lidere/">Akademija za lidere</a>
+        <a href="https://consultor.ba">Consultor</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
