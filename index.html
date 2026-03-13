@@ -59,12 +59,14 @@
       justify-content: space-between;
     }
     .logo {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: 3px;
-      text-transform: uppercase;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .logo-img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
 
     /* ─── BUTTONS ─── */
@@ -194,8 +196,29 @@
       font-weight: 600;
     }
 
+    /* ─── HERO MOBILE DAYS ─── */
+    .hero-mobile-days {
+      display: none;
+      margin-top: 24px;
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+    }
+    .hero-mobile-days span {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-mobile-days span:last-child {
+      border-bottom: none;
+    }
+
     /* ─── FOR YOU ─── */
-    #for-you { background: var(--light); }
+    #for-you { background: #F5F5F5; }
 
     .for-you-grid {
       display: grid;
@@ -511,7 +534,7 @@
     .success-sub { font-size: 14px; color: #999; }
 
     /* ─── STANDALONE FORM SECTION ─── */
-    #prijava { background: var(--light); scroll-margin-top: 80px; }
+    #prijava { background: #F5F5F5; scroll-margin-top: 80px; }
 
     /* ─── PROGRAM ─── */
     #program { background: var(--white); }
@@ -538,8 +561,8 @@
     #program-cta { background: var(--white); }
     #program-cta .inner {
       text-align: center;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
     .program-cta-text {
       color: #777;
@@ -668,21 +691,17 @@
     @media (max-width: 768px) {
       /* Hero */
       #hero {
-        min-height: 100dvh;
-        display: flex;
-        align-items: center;
+        min-height: unset;
         padding-bottom: 0;
       }
       #hero .inner {
-        padding-top: 32px;
-        padding-bottom: 32px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding-top: 24px;
+        padding-bottom: 24px;
       }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-preview-card { display: none; }
+      .hero-right { display: none; }
+      .hero-mobile-days { display: block; }
       .hero-left { text-align: center; }
       .hero-h1  { font-size: 52px; line-height: 1.1; margin-bottom: 20px; }
       .hero-sub { font-size: 18px; line-height: 1.5; margin: 0 auto 28px; }
@@ -740,7 +759,7 @@
 
       .inner,
       .inner--narrow,
-      .inner--quiz  { padding-top: 40px; padding-bottom: 40px; }
+      .inner--quiz  { padding-top: 28px; padding-bottom: 28px; }
 
       .pain-list li { font-size: 15px; }
       .for-you-cta  { font-size: 16px; }
@@ -749,7 +768,7 @@
 
     @media (max-width: 768px) {
       .quiz-card {
-        padding-bottom: 24px;
+        padding-bottom: 16px;
         margin-bottom: 0;
       }
 
@@ -757,25 +776,30 @@
         margin-top: 0;
       }
       #for-you .inner {
-        padding-top: 40px;
-        padding-bottom: 48px;
+        padding-top: 28px;
+        padding-bottom: 28px;
       }
 
       .for-you-heading {
         margin-bottom: 16px;
       }
 
+      #kviz .inner--quiz {
+        padding-bottom: 16px;
+      }
+
       #prijava .inner--narrow {
-        padding-top: 32px;
+        padding-top: 16px;
+        padding-bottom: 20px;
       }
 
       #program-cta .inner {
-        padding-top: 32px;
-        padding-bottom: 32px;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 
       .cards-grid {
-        margin-bottom: 24px;
+        margin-bottom: 0;
       }
     }
 
@@ -791,7 +815,7 @@
 <!-- ─── STICKY HEADER ─── -->
 <header id="site-header">
   <div class="header-inner">
-    <a href="#" class="logo">Consultor</a>
+    <a href="#" class="logo"><img src="consultor-logo.png" alt="Consultor" class="logo-img" /></a>
     <a href="#prijava" class="btn btn-teal btn-sm">Prijavi se besplatno</a>
   </div>
 </header>
@@ -806,6 +830,13 @@
         <p class="hero-sub">5 dana. 5 stvari koje možeš primijeniti još iste sedmice. Besplatno - direktno u tvoj inbox.</p>
         <a href="#kviz" class="btn btn-teal btn-lg">Otkrij kako daješ feedback &rarr;</a>
         <p class="hero-micro">Treba ti 2 minute. Bez kreditne kartice. Bez spama.</p>
+        <div class="hero-mobile-days">
+          <span>01 Zašto feedback ne radi</span>
+          <span>02 Kako reći da neko zaista čuje</span>
+          <span>03 Kako primiti feedback bez odbrane</span>
+          <span>04 Zašto feedback kultura ne postoji</span>
+          <span>05 Jedan razgovor ove sedmice</span>
+        </div>
       </div>
       <div class="hero-right">
         <div class="hero-preview-card">
@@ -968,7 +999,7 @@
     <div class="form-card">
       <span class="label-tag" style="display:block; text-align:center; margin-bottom:10px;">Prijavi se besplatno</span>
       <h3 class="form-h3">Počni. Besplatno. Inbox ti je ionako već pun gorih stvari.</h3>
-      <form action="https://app.kit.com/forms/9198480/subscriptions" method="POST" id="kit-form-standalone">
+      <form action="https://app.kit.com/forms/9201876/subscriptions" method="POST" id="kit-form-standalone" data-sv-form="9201876" data-uid="87eec9b89c">
         <input type="text"  name="first_name"    class="form-field" placeholder="Tvoje ime"       required autocomplete="given-name" />
         <input type="email" name="email_address" class="form-field" placeholder="tvoj@email.com"  required autocomplete="email" />
         <button type="submit" class="btn btn-teal btn-full" style="margin-top:4px;">Pošalji mi prvu lekciju &rarr;</button>
