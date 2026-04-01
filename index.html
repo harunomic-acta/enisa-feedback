@@ -16,6 +16,78 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O čemu je ovaj email kurs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pet emailova o feedbacku. Svaki ima jednu konkretnu stvar koju možeš primijeniti odmah. Bez teorije radi teorije."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Za koga je ovaj kurs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Za menadžere i lidere koji daju feedback - ali ne vide rezultate. Ako vodiš tim i znaš da feedback 'ne lijepi' - ovo je za tebe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Je li kurs zaista besplatan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da. Ni kartice, ni probnog perioda. Pet emailova u pet dana - i to je to."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Koliko vremena treba za ovaj kurs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Svaki email se čita za tri minute. Na kraju je jedna akcija. Sve skupa - pet dana, petnaest minuta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Šta ću naučiti - koje su 5 lekcija?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dan 1: zašto feedback ne radi. Dan 2: kako reći da neko zaista čuje. Dan 3: kako primiti feedback bez odbrane. Dan 4: zašto feedback kultura ne postoji u tvom timu. Dan 5: jedan razgovor koji sve mijenja. Plus bonus lekcija za one koji žele ići dalje."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ko je Enisa Selmanović-Salkić?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Konsultantica i osnivačica Consultora. Dvadeset godina, stotine menadžera. Napisala je i knjigu. Samo ono što zaista radi - ništa više."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mogu li se odjaviti?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da. Svaki email ima link za odjavu. Klikneš - gotovo. Bez pitanja, bez potvrda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Čime se ovaj kurs razlikuje od generičnih savjeta o liderstvu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nema motivacijskih citata. Nema 'budi autentičan' savjeta. Svaka lekcija je konkretna situacija - s konkretnim rješenjem za taj ponedjeljak."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -815,6 +887,62 @@
       .logo { font-size: 15px; letter-spacing: 2px; }
       .about-stats  { gap: 20px; }
     }
+
+    /* ─── FAQ ─── */
+    #faq { background: var(--white); }
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .faq-list { margin-top: 32px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+      line-height: 1.4;
+    }
+    .faq-question:hover { color: var(--teal); }
+    .faq-icon {
+      color: var(--teal);
+      font-size: 24px;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+      line-height: 1;
+      width: 24px;
+      text-align: center;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer-inner {
+      padding: 0 0 20px;
+      font-size: 15px;
+      color: #555;
+      line-height: 1.75;
+    }
+    @media (max-width: 768px) {
+      .faq-inner { padding: 40px 24px; }
+      .faq-question { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
@@ -1109,6 +1237,103 @@
   </div>
 </section>
 
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="faq-inner">
+    <span class="label-tag">ČESTO POSTAVLJANA PITANJA</span>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          O čemu je ovaj email kurs?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Pet emailova o feedbacku. Svaki ima jednu konkretnu stvar koju možeš primijeniti odmah. Bez teorije radi teorije.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Za koga je ovaj kurs?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Za menadžere i lidere koji daju feedback - ali ne vide rezultate. Ako vodiš tim i znaš da feedback "ne lijepi" - ovo je za tebe.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Je li kurs zaista besplatan?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Da. Ni kartice, ni probnog perioda. Pet emailova u pet dana - i to je to.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Koliko vremena treba za ovaj kurs?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Svaki email se čita za tri minute. Na kraju je jedna akcija. Sve skupa - pet dana, petnaest minuta.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Šta ću naučiti - koje su 5 lekcija?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <strong>Dan 1:</strong> Zašto feedback ne radi.<br>
+            <strong>Dan 2:</strong> Kako reći da neko zaista čuje.<br>
+            <strong>Dan 3:</strong> Kako primiti feedback bez odbrane.<br>
+            <strong>Dan 4:</strong> Zašto feedback kultura ne postoji u tvom timu.<br>
+            <strong>Dan 5:</strong> Jedan razgovor koji sve mijenja.<br>
+            Plus bonus lekcija za one koji žele ići dalje.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Ko je Enisa Selmanović-Salkić?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Konsultantica i osnivačica Consultora. Dvadeset godina, stotine menadžera. Napisala je i knjigu. Samo ono što zaista radi - ništa više.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Mogu li se odjaviti?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Da. Svaki email ima link za odjavu. Klikneš - gotovo. Bez pitanja, bez potvrda.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Čime se ovaj kurs razlikuje od generičnih savjeta o liderstvu?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">Nema motivacijskih citata. Nema "budi autentičan" savjeta. Svaka lekcija je konkretna situacija - s konkretnim rješenjem za taj ponedjeljak.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ─── FOOTER ─── -->
 <footer id="footer">
   <div class="footer-inner">
@@ -1242,6 +1467,22 @@
 
     showQuestion(0);
   })();
+
+  // ─── FAQ ACCORDION ───
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = this.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function (i) {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 </script>
 </body>
 </html>
